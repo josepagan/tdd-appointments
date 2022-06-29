@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { Appointment, AppointmentsDayView } from '../src/Appointment'
 import {render, screen} from '@testing-library/react'
 import React from 'react'
@@ -18,26 +22,26 @@ describe('Appointment', () => {
     });
 });
 
-describe('AppointmentsDayView', () => {
+// describe('AppointmentsDayView', () => {
 
-    it('renders a div with the right id', () => {
-        const {container} = render(<AppointmentsDayView appointments={[]} />);
-        expect(container.querySelector('div#appointmentsDayView')).not.toBeNull();
-    });
+//     it('renders a div with the right id', () => {
+//         const {container} = render(<AppointmentsDayView appointments={[]} />);
+//         expect(container.querySelector('div#appointmentsDayView')).not.toBeNull();
+//     });
 
-    it('renders multiple appointments in an ol element', () => {
-        const today = new Date();
-        const appointments = [
-            { startsAt: today.setHours(12, 0) },
-            { startsAt: today.setHours(13, 0) }
-        ];
-        const {container} = render(<AppointmentsDayView appointments={appointments} />);
-        expect(container.querySelector('ol')).not.toBeNull();
-        expect(
-            container.querySelector('ol').children
-        ).toHaveLength(2);
-    });
-});
+//     it('renders multiple appointments in an ol element', () => {
+//         const today = new Date();
+//         const appointments = [
+//             { startsAt: today.setHours(12, 0) },
+//             { startsAt: today.setHours(13, 0) }
+//         ];
+//         const {container} = render(<AppointmentsDayView appointments={appointments} />);
+//         expect(container.querySelector('ol')).not.toBeNull();
+//         expect(
+//             container.querySelector('ol').children
+//         ).toHaveLength(2);
+//     });
+// });
 
 //describe('specify list items', () => {
 //    let container
